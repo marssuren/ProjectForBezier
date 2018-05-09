@@ -296,6 +296,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="ProjectForBezier.Plugins.csproj">
+      <Project>{606E940F-C54B-C55E-9D47-912B9AA12E1B}</Project>
+      <Name>ProjectForBezier.Plugins</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.StandardEvents.csproj">
       <Project>{6800202F-4402-D405-F8CB-03DC7BD78B92}</Project>
       <Name>UnityEditor.StandardEvents</Name>
@@ -306,13 +310,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ArrowManager.cs" />
     <Compile Include="Assets\Scripts\Bezier.cs" />
     <Compile Include="Assets\Scripts\DrawLine.cs" />
+    <Compile Include="Assets\Scripts\MouseFollowBezierPath.cs" />
     <Compile Include="Assets\Scripts\MyBezier.cs" />
     <Compile Include="Assets\Scripts\MyTestBezier.cs" />
     <Compile Include="Assets\Scripts\Trace.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Plugins\BezierSolution\README.txt" />
     <None Include="C:\Users\liangxinyu\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="C:\Users\liangxinyu\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="C:\Users\liangxinyu\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Templates\Alert.uxml" />
