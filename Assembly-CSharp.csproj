@@ -51,8 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ArrowManager.cs" />
      <Compile Include="Assets\Scripts\Bezier.cs" />
      <Compile Include="Assets\Scripts\DrawLine.cs" />
+     <Compile Include="Assets\Scripts\MouseFollowBezierPath.cs" />
      <Compile Include="Assets\Scripts\MyBezier.cs" />
      <Compile Include="Assets\Scripts\MyTestBezier.cs" />
      <Compile Include="Assets\Scripts\Trace.cs" />
@@ -293,6 +295,10 @@
  <Reference Include="Boo.Lang">
  <HintPath>E:/Unity/Unity2018.1/InsFolder/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{770B2606-733F-60DD-78A4-8AF83FFDB5CF}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

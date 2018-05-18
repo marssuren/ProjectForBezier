@@ -6,9 +6,9 @@ namespace BezierSolution
 	[ExecuteInEditMode]
 	public class ParticlesFollowBezier : MonoBehaviour
 	{
-		private const int MAX_PARTICLE_COUNT = 25000;
+		private const int MAX_PARTICLE_COUNT = 25000;			//最大粒子数
 
-		public enum FollowMode { Relaxed, Strict };
+		public enum FollowMode { Relaxed, Strict };				//跟随模式		自由/约束
 
 		public BezierSpline spline;
 		public FollowMode followMode = FollowMode.Relaxed;
@@ -28,8 +28,8 @@ namespace BezierSolution
 			cachedMainModule = cachedPS.main;
 			particles = new ParticleSystem.Particle[cachedMainModule.maxParticles];
 
-			if( followMode == FollowMode.Relaxed )
-				particleData = new List<Vector4>( particles.Length );
+			if(followMode == FollowMode.Relaxed)
+				particleData = new List<Vector4>(particles.Length);
 		}
 
 #if UNITY_EDITOR
@@ -41,55 +41,55 @@ namespace BezierSolution
 
 		void LateUpdate()
 		{
-			if( spline == null || cachedPS == null )
+			if(spline == null || cachedPS == null)
 				return;
 
-			if( particles.Length < cachedMainModule.maxParticles && particles.Length < MAX_PARTICLE_COUNT )
-				particles = new ParticleSystem.Particle[Mathf.Min( cachedMainModule.maxParticles, MAX_PARTICLE_COUNT )];
+			if(particles.Length < cachedMainModule.maxParticles && particles.Length < MAX_PARTICLE_COUNT)
+				particles = new ParticleSystem.Particle[Mathf.Min(cachedMainModule.maxParticles, MAX_PARTICLE_COUNT)];
 
 			bool isLocalSpace = cachedMainModule.simulationSpace != ParticleSystemSimulationSpace.World;
-			int aliveParticles = cachedPS.GetParticles( particles );
+			int aliveParticles = cachedPS.GetParticles(particles);
 
-			if( followMode == FollowMode.Relaxed )
+			if(followMode == FollowMode.Relaxed)
 			{
-				if( particleData == null )
-					particleData = new List<Vector4>( particles.Length );
+				if(particleData == null)
+					particleData = new List<Vector4>(particles.Length);
 
-				cachedPS.GetCustomParticleData( particleData, ParticleSystemCustomData.Custom1 );
+				cachedPS.GetCustomParticleData(particleData, ParticleSystemCustomData.Custom1);
 
 				// Credit: https://forum.unity3d.com/threads/access-to-the-particle-system-lifecycle-events.328918/#post-2295977
-				for( int i = 0; i < aliveParticles; i++ )
+				for(int i = 0; i < aliveParticles; i++)
 				{
 					Vector4 particleDat = particleData[i];
-					Vector3 point = spline.GetPoint( 1f - ( particles[i].remainingLifetime / particles[i].startLifetime ) );
-					if( isLocalSpace )
-						point = cachedTransform.InverseTransformPoint( point );
+					Vector3 point = spline.GetPoint(1f - (particles[i].remainingLifetime / particles[i].startLifetime));
+					if(isLocalSpace)
+						point = cachedTransform.InverseTransformPoint(point);
 
 					// Move particles alongside the spline
-					if( particleDat.w != 0f )
-						particles[i].position += point - (Vector3) particleDat;
+					if(particleDat.w != 0f)
+						particles[i].position += point - (Vector3)particleDat;
 
 					particleDat = point;
 					particleDat.w = 1f;
 					particleData[i] = particleDat;
 				}
 
-				cachedPS.SetCustomParticleData( particleData, ParticleSystemCustomData.Custom1 );
+				cachedPS.SetCustomParticleData(particleData, ParticleSystemCustomData.Custom1);
 			}
 			else
 			{
-				Vector3 deltaPosition = cachedTransform.position - spline.GetPoint( 0f );
-				for( int i = 0; i < aliveParticles; i++ )
+				Vector3 deltaPosition = cachedTransform.position - spline.GetPoint(0f);
+				for(int i = 0; i < aliveParticles; i++)
 				{
-					Vector3 point = spline.GetPoint( 1f - ( particles[i].remainingLifetime / particles[i].startLifetime ) ) + deltaPosition;
-					if( isLocalSpace )
-						point = cachedTransform.InverseTransformPoint( point );
+					Vector3 point = spline.GetPoint(1f - (particles[i].remainingLifetime / particles[i].startLifetime)) + deltaPosition;
+					if(isLocalSpace)
+						point = cachedTransform.InverseTransformPoint(point);
 
 					particles[i].position = point;
 				}
 			}
-			
-			cachedPS.SetParticles( particles, aliveParticles );
+
+			cachedPS.SetParticles(particles, aliveParticles);
 		}
 	}
 }

@@ -92,13 +92,18 @@ public class ArrowManager : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		Initialize();
+		//Initialize();
+		//float tVector2 = Vector2.Angle(new Vector2(0, 1), new Vector2(2, 2));
+		Quaternion tQuaternion = CaculateRotation(new Vector2(0, 1), new Vector2(2, 2));
+		Vector3 tVector3 = tQuaternion.eulerAngles;
+		Debug.LogError(tVector3);
+
 	}
 
 	void FixedUpdate()
 	{
 
-		//MakeArrowFlow();
+		MakeArrowFlow();
 
 	}
 
@@ -279,27 +284,21 @@ public class ArrowManager : MonoBehaviour
 	/// <param name="currentPos">Current position.</param>
 	Quaternion CaculateRotation(Vector2 currentPos, Vector2 middlePos)
 	{
-
 		Vector2 fromVector = Vector2.up;
 		Vector2 toVector = currentPos - middlePos;
-
 		//虽然形参的名称好像是会有方向区别
 		//即从哪个向量到哪个向量
 		//然而实际中操作发现，它只会返回两个向量之间的最小非负数夹角
 		float angle = Vector2.Angle(fromVector, toVector);
-
 		//当x分量大于0时，Vector2.Angle 函数得到的角度为绕z轴顺时针度数
 		if(toVector.x > 0)
 		{
 			angle = 360f - angle;
 		}
-
 		//组合得到欧拉角
 		Vector3 diff = new Vector3(0f, 0f, angle);
-
 		//将欧拉角转化为四元数
 		Quaternion rotation = Quaternion.Euler(diff);
-
 		return rotation;
 	}
 }

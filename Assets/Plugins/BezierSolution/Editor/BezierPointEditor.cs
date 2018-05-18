@@ -9,16 +9,16 @@ namespace BezierSolution
 		private BezierSpline spline;
 		private BezierPoint point;
 
-		private Quaternion precedingPointRotation = Quaternion.identity;
-		private Quaternion followingPointRotation = Quaternion.identity;
-		private bool controlPointRotationsInitialized = false;
+		private Quaternion precedingPointRotation = Quaternion.identity;		//前点旋转
+		private Quaternion followingPointRotation = Quaternion.identity;		//后点旋转
+		private bool controlPointRotationsInitialized = false;					//是否重置控制点旋转
 
 		private Color RESET_POINT_BUTTON_COLOR = new Color( 1f, 1f, 0.65f );
 		private Color REMOVE_POINT_BUTTON_COLOR = new Color( 1f, 0.65f, 0.65f );
 
 		void OnEnable()
 		{
-			point = target as BezierPoint;
+			point = target as BezierPoint;				//
 			spline = point.GetComponentInParent<BezierSpline>();
 
 			if( spline != null && !spline.Equals( null ) )

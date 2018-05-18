@@ -101,10 +101,10 @@ namespace BezierSolution
 			}
 		}
 
-		[SerializeField]
+		//[SerializeField]
 		[HideInInspector]
 		private Vector3 m_precedingControlPointLocalPosition = Vector3.left;
-		public Vector3 precedingControlPointLocalPosition                       //控制点的localPosition
+		public Vector3 precedingControlPointLocalPosition                       //跟随点的本地坐标
 		{
 			get
 			{
@@ -115,27 +115,27 @@ namespace BezierSolution
 				m_precedingControlPointLocalPosition = value;
 				m_precedingControlPointPosition = transform.TransformPoint(value);
 
-				if(m_handleMode == HandleMode.Aligned)
+				if(m_handleMode == HandleMode.Aligned)		//对齐
 				{
-					m_followingControlPointLocalPosition = -m_precedingControlPointLocalPosition.normalized * m_followingControlPointLocalPosition.magnitude;
-					m_followingControlPointPosition = transform.TransformPoint(m_followingControlPointLocalPosition);
+					m_followingControlPointLocalPosition = -m_precedingControlPointLocalPosition.normalized * m_followingControlPointLocalPosition.magnitude;	//跟随点本地坐标=设定点坐标的反方向*自身长度
+					m_followingControlPointPosition = transform.TransformPoint(m_followingControlPointLocalPosition);//将相对 “当前游戏对象” 的坐标转化为基于世界坐标系的坐标
 				}
-				else if(m_handleMode == HandleMode.Mirrored)
+				else if(m_handleMode == HandleMode.Mirrored)	//镜像
 				{
-					m_followingControlPointLocalPosition = -m_precedingControlPointLocalPosition;
-					m_followingControlPointPosition = transform.TransformPoint(m_followingControlPointLocalPosition);
+					m_followingControlPointLocalPosition = -m_precedingControlPointLocalPosition;			//跟随点本地坐标=设定点反向的本地坐标
+					m_followingControlPointPosition = transform.TransformPoint(m_followingControlPointLocalPosition);//将相对 “当前游戏对象” 的坐标转化为基于世界坐标系的坐标
 				}
 			}
 		}
 
-		[SerializeField]
+		//[SerializeField]
 		[HideInInspector]
 		private Vector3 m_precedingControlPointPosition;
-		public Vector3 precedingControlPointPosition                            //控制点的Position
+		public Vector3 precedingControlPointPosition                            //前点的世界坐标
 		{
 			get
 			{
-				if(transform.hasChanged)			//如果自身坐标更改
+				if(transform.hasChanged)			//如果自身坐标有变化
 					Revalidate();					//重新刷新
 
 				return m_precedingControlPointPosition;
@@ -143,7 +143,7 @@ namespace BezierSolution
 			set
 			{
 				m_precedingControlPointPosition = value;
-				m_precedingControlPointLocalPosition = transform.InverseTransformPoint(value);
+				m_precedingControlPointLocalPosition = transform.InverseTransformPoint(value);//将世界坐标转化为相对"当前游戏对象"的基于世界坐标系的坐标
 
 				if(transform.hasChanged)
 				{
@@ -155,20 +155,20 @@ namespace BezierSolution
 				{
 					m_followingControlPointPosition = m_position - (m_precedingControlPointPosition - m_position).normalized *
 																   (m_followingControlPointPosition - m_position).magnitude;
-					m_followingControlPointLocalPosition = transform.InverseTransformPoint(m_followingControlPointPosition);
+					m_followingControlPointLocalPosition = transform.InverseTransformPoint(m_followingControlPointPosition);//将世界坐标转化为相对"当前游戏对象"的基于世界坐标系的坐标
 				}
 				else if(m_handleMode == HandleMode.Mirrored)
 				{
 					m_followingControlPointPosition = 2f * m_position - m_precedingControlPointPosition;
-					m_followingControlPointLocalPosition = transform.InverseTransformPoint(m_followingControlPointPosition);
+					m_followingControlPointLocalPosition = transform.InverseTransformPoint(m_followingControlPointPosition);//将世界坐标转化为相对"当前游戏对象"的基于世界坐标系的坐标
 				}
 			}
 		}
 
-		[SerializeField]
+		//[SerializeField]
 		[HideInInspector]
 		private Vector3 m_followingControlPointLocalPosition = Vector3.right;
-		public Vector3 followingControlPointLocalPosition
+		public Vector3 followingControlPointLocalPosition				//跟随点的本地坐标
 		{
 			get
 			{
@@ -192,10 +192,10 @@ namespace BezierSolution
 			}
 		}
 
-		[SerializeField]
+		//[SerializeField]
 		[HideInInspector]
 		private Vector3 m_followingControlPointPosition;
-		public Vector3 followingControlPointPosition
+		public Vector3 followingControlPointPosition		//跟随点的世界坐标
 		{
 			get
 			{
@@ -229,7 +229,7 @@ namespace BezierSolution
 			}
 		}
 
-		[SerializeField]
+		//[SerializeField]
 		[HideInInspector]
 		private HandleMode m_handleMode = HandleMode.Mirrored;
 		public HandleMode handleMode

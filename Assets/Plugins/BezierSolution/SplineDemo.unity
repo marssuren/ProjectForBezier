@@ -154,11 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -0.0009370744, y: 0.23681915, z: -0.81338}
-  m_precedingControlPointLocalPosition: {x: 0.1676443, y: 0, z: -0.1521187}
-  m_precedingControlPointPosition: {x: 0.45358112, y: -0.25398397, z: -0.621827}
-  m_followingControlPointLocalPosition: {x: -0.1676443, y: 0, z: 0.15211868}
-  m_followingControlPointPosition: {x: -0.45545524, y: 0.72762233, z: -1.004933}
-  m_handleMode: 0
 --- !u!1 &54814373
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,11 +305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -3.8904982, y: -0.88245815, z: -1.3306568}
-  m_precedingControlPointLocalPosition: {x: -0.04451251, y: -0, z: 0.13437235}
-  m_precedingControlPointPosition: {x: -3.944724, y: -0.7170844, z: -1.2501781}
-  m_followingControlPointLocalPosition: {x: 0.04451251, y: 0, z: -0.13437235}
-  m_followingControlPointPosition: {x: -3.8362718, y: -1.0478318, z: -1.4111356}
-  m_handleMode: 2
 --- !u!1 &126177800
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,11 +394,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -3.8501935, y: 1.1945807, z: -0.5778339}
-  m_precedingControlPointLocalPosition: {x: 0.022587538, y: -0, z: 0.10904813}
-  m_precedingControlPointPosition: {x: -3.8188117, y: 1.3362834, z: -0.5367127}
-  m_followingControlPointLocalPosition: {x: -0.022587538, y: 0, z: -0.10904813}
-  m_followingControlPointPosition: {x: -3.8815756, y: 1.0528779, z: -0.61895514}
-  m_handleMode: 2
 --- !u!1 &143379203
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,11 +435,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: 0.13402754, y: 0.536808, z: -0.6994278}
-  m_precedingControlPointLocalPosition: {x: 0.061824072, y: -0, z: -0.21266727}
-  m_precedingControlPointPosition: {x: 0.30577466, y: -0.12182021, z: -0.6876327}
-  m_followingControlPointLocalPosition: {x: -0.061824072, y: 0, z: 0.21266727}
-  m_followingControlPointPosition: {x: -0.037719548, y: 1.1954362, z: -0.7112229}
-  m_handleMode: 2
 --- !u!1 &154533942
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,11 +476,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -0.70388436, y: -0.64788294, z: -1.3201047}
-  m_precedingControlPointLocalPosition: {x: -0.09696913, y: -0, z: 0.06397148}
-  m_precedingControlPointPosition: {x: -0.9661542, y: -0.43725896, z: -1.4399302}
-  m_followingControlPointLocalPosition: {x: 0.09696913, y: 0, z: -0.06397148}
-  m_followingControlPointPosition: {x: -0.44161463, y: -0.8585069, z: -1.2002796}
-  m_handleMode: 2
 --- !u!1 &337675389
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,11 +602,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -5.1551228, y: 0.89528805, z: -0.22174269}
-  m_precedingControlPointLocalPosition: {x: 0.25231743, y: -0, z: 0.07634574}
-  m_precedingControlPointPosition: {x: -4.829468, y: 1.0246911, z: -0.29039794}
-  m_followingControlPointLocalPosition: {x: -0.25231743, y: 0, z: -0.07634574}
-  m_followingControlPointPosition: {x: -5.480778, y: 0.76588506, z: -0.15308747}
-  m_handleMode: 2
 --- !u!1 &453311153
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,11 +643,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: 0.6653608, y: -2.4470844, z: -0.7841042}
-  m_precedingControlPointLocalPosition: {x: -0.11511052, y: -0, z: -0.01853376}
-  m_precedingControlPointPosition: {x: 0.3565162, y: -2.4852567, z: -0.96185434}
-  m_followingControlPointLocalPosition: {x: 0.11511052, y: 0, z: 0.01853376}
-  m_followingControlPointPosition: {x: 0.9742056, y: -2.4089122, z: -0.6063541}
-  m_handleMode: 2
 --- !u!1 &460958476
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,11 +769,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -1.793683, y: -2.401421, z: -2.1546016}
-  m_precedingControlPointLocalPosition: {x: -0.20887783, y: -0, z: 0.41264752}
-  m_precedingControlPointPosition: {x: -2.3658783, y: -1.1092684, z: -2.309412}
-  m_followingControlPointLocalPosition: {x: 0.20887783, y: 0, z: -0.41264752}
-  m_followingControlPointPosition: {x: -1.2214879, y: -3.693573, z: -1.9997915}
-  m_handleMode: 2
 --- !u!1 &544969633
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,11 +810,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -4.5510483, y: -0.08737135, z: 3.5899994}
-  m_precedingControlPointLocalPosition: {x: -0.11810267, y: 0, z: 0.4408211}
-  m_precedingControlPointPosition: {x: -4.809133, y: 0.87593555, z: 3.5899994}
-  m_followingControlPointLocalPosition: {x: 0.11810291, y: 0.00000010910326, z: -0.44082022}
-  m_followingControlPointPosition: {x: -4.2929635, y: -1.0506768, z: 3.5899994}
-  m_handleMode: 2
 --- !u!1 &600501173
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,11 +851,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -6.7218084, y: -1.273006, z: -0.46243596}
-  m_precedingControlPointLocalPosition: {x: 0.23100758, y: -0, z: -0.2599901}
-  m_precedingControlPointPosition: {x: -6.4308515, y: -1.5744811, z: -0.6778449}
-  m_followingControlPointLocalPosition: {x: -0.23100758, y: 0, z: 0.2599901}
-  m_followingControlPointPosition: {x: -7.012766, y: -0.97153074, z: -0.2470271}
-  m_handleMode: 2
 --- !u!1 &625103346
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,11 +892,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -0.31173208, y: 0.09321916, z: -1.0057212}
-  m_precedingControlPointLocalPosition: {x: 0.04138258, y: -0, z: 0.039102413}
-  m_precedingControlPointPosition: {x: -0.20155706, y: 0.2059021, z: -0.9296272}
-  m_followingControlPointLocalPosition: {x: -0.04138258, y: 0, z: -0.039102413}
-  m_followingControlPointPosition: {x: -0.42190713, y: -0.019463778, z: -1.0818152}
-  m_handleMode: 2
 --- !u!1 &631746913
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,11 +933,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -1.92, y: -3.3652563, z: 3.59}
-  m_precedingControlPointLocalPosition: {x: -0.37536633, y: 0.000000006818954, z: -0.011424184}
-  m_precedingControlPointPosition: {x: -2.7402716, y: -3.390221, z: 3.59}
-  m_followingControlPointLocalPosition: {x: 0.37536633, y: -0.000000006818954, z: 0.011424184}
-  m_followingControlPointPosition: {x: -1.0997283, y: -3.3402915, z: 3.59}
-  m_handleMode: 2
 --- !u!1 &658625639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,11 +974,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: 0.65798414, y: -3.8199782, z: -0.964023}
-  m_precedingControlPointLocalPosition: {x: -0.26152948, y: -0, z: 0.0075016036}
-  m_precedingControlPointPosition: {x: -0.045015067, y: -3.755364, z: -1.349223}
-  m_followingControlPointLocalPosition: {x: 0.26152948, y: 0, z: -0.0075016036}
-  m_followingControlPointPosition: {x: 1.3609834, y: -3.8845925, z: -0.5788225}
-  m_handleMode: 2
 --- !u!1 &662000306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,11 +1015,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: 0.4750408, y: 0.06559658, z: 3.5899994}
-  m_precedingControlPointLocalPosition: {x: -0.10456413, y: 0.00000032730978, z: -0.44148684}
-  m_precedingControlPointPosition: {x: 0.24654138, y: -0.89916563, z: 3.589999}
-  m_followingControlPointLocalPosition: {x: 0.10456419, y: -0.00000021820652, z: 0.44148773}
-  m_followingControlPointPosition: {x: 0.70354044, y: 1.0303602, z: 3.59}
-  m_handleMode: 2
 --- !u!1 &711877544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,11 +1056,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -2.8373122, y: 1.0608914, z: -2.2954025}
-  m_precedingControlPointLocalPosition: {x: 0.26239017, y: -0, z: 0.12974901}
-  m_precedingControlPointPosition: {x: -2.7365513, y: 1.9388982, z: -2.126583}
-  m_followingControlPointLocalPosition: {x: -0.26239017, y: 0, z: -0.12974901}
-  m_followingControlPointPosition: {x: -2.9380734, y: 0.1828847, z: -2.4642222}
-  m_handleMode: 2
 --- !u!1 &728216725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,11 +1156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -5.6016293, y: -0.6507651, z: -0.63316625}
-  m_precedingControlPointLocalPosition: {x: -0.2517035, y: -0, z: 0.1955263}
-  m_precedingControlPointPosition: {x: -5.920567, y: -0.433995, z: -0.43904063}
-  m_followingControlPointLocalPosition: {x: 0.2517035, y: 0, z: -0.1955263}
-  m_followingControlPointPosition: {x: -5.2826915, y: -0.86753523, z: -0.8272919}
-  m_handleMode: 2
 --- !u!1 &762584196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,11 +1197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -5.804125, y: 0.4181628, z: -0.16590267}
-  m_precedingControlPointLocalPosition: {x: 0.054610252, y: -0, z: 0.19693798}
-  m_precedingControlPointPosition: {x: -5.7297072, y: 0.67583835, z: -0.09733203}
-  m_followingControlPointLocalPosition: {x: -0.054610252, y: 0, z: -0.19693798}
-  m_followingControlPointPosition: {x: -5.8785424, y: 0.16048726, z: -0.23447327}
-  m_handleMode: 2
 --- !u!1 &895981909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,11 +1238,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -4.966832, y: 1.7455047, z: 0.024984956}
-  m_precedingControlPointLocalPosition: {x: -0.29872727, y: -0, z: 0.07156277}
-  m_precedingControlPointPosition: {x: -5.3488545, y: 1.7984647, z: 0.18116021}
-  m_followingControlPointLocalPosition: {x: 0.29872727, y: 0, z: -0.07156277}
-  m_followingControlPointPosition: {x: -4.5848093, y: 1.6925446, z: -0.13119042}
-  m_handleMode: 2
 --- !u!1 &898965706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,11 +1279,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -0.8910035, y: 0.49993795, z: -1.2778659}
-  m_precedingControlPointLocalPosition: {x: 0.048472665, y: -0, z: 0.097998515}
-  m_precedingControlPointPosition: {x: -0.76332873, y: 0.7911583, z: -1.1691167}
-  m_followingControlPointLocalPosition: {x: -0.048472665, y: 0, z: -0.097998515}
-  m_followingControlPointPosition: {x: -1.0186782, y: 0.2087177, z: -1.3866152}
-  m_handleMode: 2
 --- !u!1 &939553621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,11 +1405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -6.1423287, y: 1.5123409, z: 0.35921788}
-  m_precedingControlPointLocalPosition: {x: -0.26369286, y: -0, z: -0.18036842}
-  m_precedingControlPointPosition: {x: -6.4848595, y: 1.249064, z: 0.38445622}
-  m_followingControlPointLocalPosition: {x: 0.26369286, y: 0, z: 0.18036842}
-  m_followingControlPointPosition: {x: -5.7997985, y: 1.7756177, z: 0.3339796}
-  m_handleMode: 2
 --- !u!1 &1060012329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,11 +1446,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -7.0220146, y: 0.16584405, z: 0.17641443}
-  m_precedingControlPointLocalPosition: {x: -0.069139004, y: -0, z: -0.3577338}
-  m_precedingControlPointPosition: {x: -7.1185946, y: -0.29838046, z: 0.039472237}
-  m_followingControlPointLocalPosition: {x: 0.069139004, y: 0, z: 0.3577338}
-  m_followingControlPointPosition: {x: -6.925434, y: 0.6300685, z: 0.3133566}
-  m_handleMode: 2
 --- !u!1 &1105749770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,11 +1487,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -3.5895357, y: 1.4204555, z: 3.5899994}
-  m_precedingControlPointLocalPosition: {x: 0.25135887, y: 0, z: -0.1028713}
-  m_precedingControlPointPosition: {x: -3.0402522, y: 1.1956553, z: 3.5899994}
-  m_followingControlPointLocalPosition: {x: -0.2513588, y: 0, z: 0.10287213}
-  m_followingControlPointPosition: {x: -4.138819, y: 1.6452575, z: 3.5899994}
-  m_handleMode: 2
 --- !u!1 &1108260712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,11 +1613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -1.288126, y: 2.216894, z: -1.2802937}
-  m_precedingControlPointLocalPosition: {x: 0.11589549, y: -0, z: -0.22728457}
-  m_precedingControlPointPosition: {x: -0.61341816, y: 2.0310283, z: -0.9264536}
-  m_followingControlPointLocalPosition: {x: -0.11589549, y: 0, z: 0.22728457}
-  m_followingControlPointPosition: {x: -1.9628341, y: 2.4027593, z: -1.6341338}
-  m_handleMode: 2
 --- !u!1 &1145851118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,11 +1654,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: 0.5947571, y: -2.9379969, z: -0.8864795}
-  m_precedingControlPointLocalPosition: {x: 0.122305445, y: -0, z: -0.029033283}
-  m_precedingControlPointPosition: {x: 0.924191, y: -3.0460806, z: -0.7159325}
-  m_followingControlPointLocalPosition: {x: -0.122305445, y: 0, z: 0.029033283}
-  m_followingControlPointPosition: {x: 0.26532307, y: -2.8299122, z: -1.0570265}
-  m_handleMode: 2
 --- !u!1 &1162037917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,11 +1695,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: 1.0463902, y: -1.3925617, z: -0.43581474}
-  m_precedingControlPointLocalPosition: {x: -0.0038200452, y: -0, z: -0.07248306}
-  m_precedingControlPointPosition: {x: 1.0380363, y: -1.6130693, z: -0.4687251}
-  m_followingControlPointLocalPosition: {x: 0.0038200452, y: 0, z: 0.07248306}
-  m_followingControlPointPosition: {x: 1.054744, y: -1.172054, z: -0.4029044}
-  m_handleMode: 2
 --- !u!1 &1232478177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,11 +1846,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -5.276272, y: -1.643007, z: -1.1160387}
-  m_precedingControlPointLocalPosition: {x: 0.36725235, y: -0, z: 0.014299035}
-  m_precedingControlPointPosition: {x: -4.8043866, y: -1.5779157, z: -1.2607422}
-  m_followingControlPointLocalPosition: {x: -0.36725235, y: 0, z: -0.014299035}
-  m_followingControlPointPosition: {x: -5.748157, y: -1.7080985, z: -0.9713352}
-  m_handleMode: 2
 --- !u!1 &1446967689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,11 +1887,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: 1.7834499, y: -3.1272206, z: -0.24538863}
-  m_precedingControlPointLocalPosition: {x: 0.039981365, y: -0, z: -0.06662555}
-  m_precedingControlPointPosition: {x: 1.892648, y: -3.3368483, z: -0.21111095}
-  m_followingControlPointLocalPosition: {x: -0.039981365, y: 0, z: 0.06662555}
-  m_followingControlPointPosition: {x: 1.6742518, y: -2.9175935, z: -0.27966607}
-  m_handleMode: 2
+--- !u!1 &1452762118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1452762120}
+  - component: {fileID: 1452762119}
+  m_Layer: 0
+  m_Name: Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1452762119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452762118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9cf9c5931a3b3c4ba456c8213d7ebfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_position: {x: 0, y: 0, z: 0}
+--- !u!4 &1452762120
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452762118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 60.655003, y: 0, z: 0}
 --- !u!1 &1534014693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,11 +1969,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -0.5083244, y: 1.4641604, z: 3.5899994}
-  m_precedingControlPointLocalPosition: {x: 0.26797438, y: 0, z: 0.12020576}
-  m_precedingControlPointPosition: {x: 0.07726836, y: 1.726841, z: 3.5899994}
-  m_followingControlPointLocalPosition: {x: -0.26797435, y: 0.00000021820652, z: -0.12020457}
-  m_followingControlPointPosition: {x: -1.0939169, y: 1.2014828, z: 3.589999}
-  m_handleMode: 2
 --- !u!1 &1605569296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,11 +2010,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: 0.09041545, y: -0.36767662, z: -0.839651}
-  m_precedingControlPointLocalPosition: {x: -0.023200836, y: -0, z: -0.0884429}
-  m_precedingControlPointPosition: {x: 0.030401051, y: -0.63377905, z: -0.9073142}
-  m_followingControlPointLocalPosition: {x: 0.023200836, y: 0, z: 0.0884429}
-  m_followingControlPointPosition: {x: 0.15042987, y: -0.10157418, z: -0.7719878}
-  m_handleMode: 2
 --- !u!1 &1614952848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,11 +2051,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: 1.3931326, y: -2.4302828, z: -0.37461364}
-  m_precedingControlPointLocalPosition: {x: 0.039254766, y: -0, z: -0.07889486}
-  m_precedingControlPointPosition: {x: 1.5007018, y: -2.6772232, z: -0.34602535}
-  m_followingControlPointLocalPosition: {x: -0.039254766, y: 0, z: 0.07889486}
-  m_followingControlPointPosition: {x: 1.2855636, y: -2.1833425, z: -0.40320194}
-  m_handleMode: 2
 --- !u!1 &1733954120
 GameObject:
   m_ObjectHideFlags: 0
@@ -6987,11 +6878,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -2.1254141, y: -0.02181387, z: 3.5899994}
-  m_precedingControlPointLocalPosition: {x: 0.22266673, y: 0.00000010910326, z: 0.0006670356}
-  m_precedingControlPointPosition: {x: -1.6388302, y: -0.020356178, z: 3.5899992}
-  m_followingControlPointLocalPosition: {x: -0.22266681, y: -0.00000010910326, z: -0.0006662011}
-  m_followingControlPointPosition: {x: -2.611998, y: -0.023269653, z: 3.5899997}
-  m_handleMode: 2
 --- !u!1 &2093860275
 GameObject:
   m_ObjectHideFlags: 0
@@ -7033,11 +6919,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: 0.48204735, y: -1.2785811, z: -0.7370869}
-  m_precedingControlPointLocalPosition: {x: 0.022580685, y: -0, z: -0.045553397}
-  m_precedingControlPointPosition: {x: 0.5439292, y: -1.4211497, z: -0.72070634}
-  m_followingControlPointLocalPosition: {x: -0.022580685, y: 0, z: 0.045553397}
-  m_followingControlPointPosition: {x: 0.42016545, y: -1.1360133, z: -0.7534679}
-  m_handleMode: 2
 --- !u!1 &2095587044
 GameObject:
   m_ObjectHideFlags: 0
@@ -7079,11 +6960,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_position: {x: -0.10834992, y: -0.5778954, z: -0.9778185}
-  m_precedingControlPointLocalPosition: {x: -0.06764942, y: -0, z: 0.004849837}
-  m_precedingControlPointPosition: {x: -0.29027036, y: -0.5523063, z: -1.0763642}
-  m_followingControlPointLocalPosition: {x: 0.06764942, y: 0, z: -0.004849837}
-  m_followingControlPointPosition: {x: 0.07357052, y: -0.6034844, z: -0.8792728}
-  m_handleMode: 2
 --- !u!1 &2112567396
 GameObject:
   m_ObjectHideFlags: 0

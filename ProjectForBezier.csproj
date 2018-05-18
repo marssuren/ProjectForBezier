@@ -312,10 +312,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ArrowManager.cs" />
     <Compile Include="Assets\Scripts\Bezier.cs" />
-    <Compile Include="Assets\Scripts\DrawLine.cs" />
     <Compile Include="Assets\Scripts\MouseFollowBezierPath.cs" />
     <Compile Include="Assets\Scripts\MyBezier.cs" />
     <Compile Include="Assets\Scripts\MyTestBezier.cs" />
+    <Compile Include="Assets\Scripts\TestBezierPoint.cs" />
     <Compile Include="Assets\Scripts\Trace.cs" />
   </ItemGroup>
   <ItemGroup>

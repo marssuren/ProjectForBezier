@@ -6,10 +6,10 @@ namespace BezierSolution
 	[ExecuteInEditMode]
 	public class BezierSpline : MonoBehaviour
 	{
-		private static Material gizmoMaterial;
+		private static Material gizmoMaterial;			//绘制材质
 		
-		private Color gizmoColor = Color.white;
-		private float gizmoStep = 0.05f;
+		private Color gizmoColor = Color.white;			//绘制颜色
+		private float gizmoStep = 0.05f;				//绘制步长
 
 		private List<BezierPoint> endPoints = new List<BezierPoint>();
 		
