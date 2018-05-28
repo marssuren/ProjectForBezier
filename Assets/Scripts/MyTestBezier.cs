@@ -17,13 +17,13 @@ public class MyTestBezier : MonoBehaviour
 			if(null == pointTrans)
 			{
 				pointTrans = new List<Vector2>();
-				Debug.LogError(Camera.main.WorldToScreenPoint(new Vector2(_pointTrans[0].transform.position.x,_pointTrans[0].transform.position.y)));
+				//Debug.LogError(Camera.main.WorldToScreenPoint(new Vector2(_pointTrans[0].transform.position.x, _pointTrans[0].transform.position.y)));
 				pointTrans.Add(Camera.main.WorldToScreenPoint(new Vector2(_pointTrans[0].transform.position.x, _pointTrans[0].transform.position.y)));
 				pointTrans.Add(new Vector2(Screen.width / 2, Screen.height / 2));
-				Debug.LogError(new Vector2(Screen.width / 2, Screen.height / 2));
+				//Debug.LogError(new Vector2(Screen.width / 2, Screen.height / 2));
 
-				pointTrans.Add(Camera.main.WorldToScreenPoint(new Vector2(_pointTrans[1].transform.position.x, _pointTrans[1].transform.position.y)));
-				Debug.LogError(Camera.main.WorldToScreenPoint(new Vector2(_pointTrans[1].transform.position.x, _pointTrans[1].transform.position.y)));
+				pointTrans.Add(Input.mousePosition);
+				//Debug.LogError(Camera.main.WorldToScreenPoint(new Vector2(_pointTrans[1].transform.position.x, _pointTrans[1].transform.position.y)));
 
 			}
 			return pointTrans;
@@ -139,12 +139,13 @@ public class MyTestBezier : MonoBehaviour
 		for(int i = 0; i < tVector2s.Length; i++)
 		{
 			//Vector2 tWorldPoint = transform.InverseTransformPoint(tVector2s[i]);
-			tVector3s[i] = new Vector3(tVector2s[i].x/50,tVector2s[i].y/50, 0f);
+			tVector3s[i] = new Vector3(tVector2s[i].x / 5, tVector2s[i].y / 5, 0f);
 		}
 
 		lineRenderer.positionCount = tVector3s.Length;
 		//lineRenderer.startWidth = 0.1f;
 		//lineRenderer.endWidth = 0.1f;
+		lineRenderer.transform.position = new Vector3(-tVector3s[0].x, -tVector3s[0].y, 0);
 		lineRenderer.SetPositions(tVector3s);
 	}
 	void Update()
@@ -193,7 +194,8 @@ public class MyTestBezier : MonoBehaviour
 			pointTrans.Clear();
 			pointTrans.Add(Camera.main.WorldToScreenPoint(_pointTrans[0].transform.position));
 			pointTrans.Add(new Vector2(Screen.width / 2, Screen.height / 2));
-			pointTrans.Add(Camera.main.WorldToScreenPoint(_pointTrans[1].transform.position));
+			pointTrans.Add(new Vector2(Input.mousePosition.x/5,Input.mousePosition.y/5));
+			Debug.LogError(Input.mousePosition);
 			refreshTrack();
 			lineRendererDraw();
 
