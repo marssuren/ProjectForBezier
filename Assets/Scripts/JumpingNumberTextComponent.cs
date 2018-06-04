@@ -6,7 +6,8 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class JumpingNumberTextComponent : MonoBehaviour {
+public class JumpingNumberTextComponent : MonoBehaviour
+{
 
 	[SerializeField]
 	[Tooltip("按最高位起始顺序设置每位数字Text（显示组）")]
@@ -27,7 +28,8 @@ public class JumpingNumberTextComponent : MonoBehaviour {
 	/// <summary>
 	/// 数字每次变动数值
 	/// </summary>
-	private int _speed=1;
+	[SerializeField]
+	private int speed = 1;
 	/// <summary>
 	/// 滚动延迟（每进一位增加一倍延迟，让滚动看起来更随机自然）
 	/// </summary>
@@ -40,23 +42,25 @@ public class JumpingNumberTextComponent : MonoBehaviour {
 	/// <summary>
 	/// 当前数字
 	/// </summary>
-	private int _curNumber;
+	private int curNumber;
 	/// <summary>
 	/// 起始数字
 	/// </summary>
-	private int _fromNumber;
+	[SerializeField]
+	private int fromNumber;
 	/// <summary>
 	/// 最终数字
 	/// </summary>
-	private int _toNumber;
+	[SerializeField]
+	private int toNumber;
 	/// <summary>
 	/// 各位数字的缓动实例
 	/// </summary>
-	private List<Tweener> _tweener = new List<Tweener>();
+	private List<Tweener> tweener = new List<Tweener>();
 	/// <summary>
 	/// 是否处于数字滚动中
 	/// </summary>
-	private bool _isJumping;
+	private bool isJumping;
 	/// <summary>
 	/// 滚动完毕回调
 	/// </summary>
@@ -92,45 +96,50 @@ public class JumpingNumberTextComponent : MonoBehaviour {
 			return _different;
 		}
 	}
-
-	public void Change(int from, int to)
+	void Start()
 	{
-		bool isRepeatCall = _isJumping && _fromNumber == from && _toNumber == to;
-		if(isRepeatCall)
+		//Change(100, 112);
+	}
+	public void Change(int _from, int _to)
+	{
+		bool tIsRepeatStop = isJumping && fromNumber == _from && toNumber == _to;	
+		if(tIsRepeatStop)
+		{
 			return;
+		}
 
-		bool isContinuousChange = (_toNumber == from) && ((to - from > 0 && _different > 0) || (to - from < 0 && _different < 0));
-		if(_isJumping && isContinuousChange)
+		bool isContinuousChange = (toNumber == _from) && ((_to - _from > 0 && _different > 0) || (_to - _from < 0 && _different < 0));
+		if(isJumping && isContinuousChange)
 		{
 		}
 		else
 		{
-			_fromNumber = from;
-			_curNumber = _fromNumber;
+			fromNumber = _from;
+			curNumber = fromNumber;
 		}
-		_toNumber = to;
+		toNumber = _to;
 
-		_different = _toNumber - _fromNumber;
-		_speed = (int)Math.Ceiling(_different / (_duration * (1 / _rollingDuration)));
-		_speed = _speed == 0 ? (_different > 0 ? 1 : -1) : _speed;
+		_different = toNumber - fromNumber;
+		speed = (int)Math.Ceiling(_different / (_duration * (1 / _rollingDuration)));
+		speed = speed == 0 ? (_different > 0 ? 1 : -1) : speed;
 
-		SetNumber(_curNumber, false);
-		_isJumping = true;
-		StopCoroutine("DoJumpNumber");
-		StartCoroutine("DoJumpNumber");
+		SetNumber(curNumber, false);
+		isJumping = true;
+		StopCoroutine(DoJumpNumber());
+		StartCoroutine(DoJumpNumber());
 	}
 
 	public int number
 	{
 		get
 		{
-			return _toNumber;
+			return toNumber;
 		}
 		set
 		{
-			if(_toNumber == value)
+			if(toNumber == value)
 				return;
-			Change(_curNumber, _toNumber);
+			Change(curNumber, toNumber);
 		}
 	}
 
@@ -138,20 +147,20 @@ public class JumpingNumberTextComponent : MonoBehaviour {
 	{
 		while(true)
 		{
-			if(_speed > 0)//增加
+			if(speed > 0)//增加
 			{
-				_curNumber = Math.Min(_curNumber + _speed, _toNumber);
+				curNumber = Math.Min(curNumber + speed, toNumber);
 			}
-			else if(_speed < 0) //减少
+			else if(speed < 0) //减少
 			{
-				_curNumber = Math.Max(_curNumber + _speed, _toNumber);
+				curNumber = Math.Max(curNumber + speed, toNumber);
 			}
-			SetNumber(_curNumber, true);
+			SetNumber(curNumber, true);
 
-			if(_curNumber == _toNumber)
+			if(curNumber == toNumber)
 			{
 				StopCoroutine("DoJumpNumber");
-				_isJumping = false;
+				isJumping = false;
 				if(OnComplete != null)
 					OnComplete();
 				yield return null;
@@ -165,13 +174,13 @@ public class JumpingNumberTextComponent : MonoBehaviour {
 	/// </summary>
 	/// <param name="v"></param>
 	/// <param name="isTween"></param>
-	public void SetNumber(int v, bool isTween)
+	public void SetNumber(int _v, bool _isTween)
 	{
-		char[] c = v.ToString().ToCharArray();
+		char[] c = _v.ToString().ToCharArray();
 		Array.Reverse(c);
 		string s = new string(c);
 
-		if(!isTween)
+		if(!_isTween)
 		{
 			for(int i = 0; i < _numbers.Count; i++)
 			{
@@ -183,10 +192,10 @@ public class JumpingNumberTextComponent : MonoBehaviour {
 		}
 		else
 		{
-			while(_tweener.Count > 0)
+			while(tweener.Count > 0)
 			{
-				_tweener[0].Complete();
-				_tweener.RemoveAt(0);
+				tweener[0].Complete();
+				tweener.RemoveAt(0);
 			}
 
 			for(int i = 0; i < _numbers.Count; i++)
@@ -200,12 +209,12 @@ public class JumpingNumberTextComponent : MonoBehaviour {
 					_unactiveNumbers[i].text = "0";
 				}
 
-				_unactiveNumbers[i].rectTransform.anchoredPosition = new Vector2(_unactiveNumbers[i].rectTransform.anchoredPosition.x, (_speed > 0 ? -1 : 1) * _numberSize.y);
+				_unactiveNumbers[i].rectTransform.anchoredPosition = new Vector2(_unactiveNumbers[i].rectTransform.anchoredPosition.x, (speed > 0 ? -1 : 1) * _numberSize.y);
 				_numbers[i].rectTransform.anchoredPosition = new Vector2(_unactiveNumbers[i].rectTransform.anchoredPosition.x, 0);
 
 				if(_unactiveNumbers[i].text != _numbers[i].text)
 				{
-					DoTween(_numbers[i], (_speed > 0 ? 1 : -1) * _numberSize.y, _delay * i);
+					DoTween(_numbers[i], (speed > 0 ? 1 : -1) * _numberSize.y, _delay * i);
 					DoTween(_unactiveNumbers[i], 0, _delay * i);
 
 					Text tmp = _numbers[i];
@@ -216,19 +225,26 @@ public class JumpingNumberTextComponent : MonoBehaviour {
 		}
 	}
 
-	public void DoTween(Text text, float endValue, float delay)
+	public void DoTween(Text _text, float _endValue, float _delay)
 	{
-		Tweener t = DOTween.To(() => text.rectTransform.anchoredPosition, (x) =>
+		Tweener t = DOTween.To(() => _text.rectTransform.anchoredPosition, (x) =>
 		{
-			text.rectTransform.anchoredPosition = x;
-		}, new Vector2(text.rectTransform.anchoredPosition.x, endValue), _rollingDuration - delay).SetDelay(delay);
-		_tweener.Add(t);
+			_text.rectTransform.anchoredPosition = x;
+		}, new Vector2(_text.rectTransform.anchoredPosition.x, _endValue), _rollingDuration - _delay).SetDelay(_delay);
+		tweener.Add(t);
 	}
 
 
 	[ContextMenu("测试数字变化")]
 	public void TestChange()
 	{
+		OnComplete += () =>
+		{
+			for(int i = 0; i < _numbers.Count; i++)
+			{
+				_numbers[i].transform.localPosition = new Vector2(_numbers[i].transform.localPosition.x, 0);
+			}
+		};
 		Change(UnityEngine.Random.Range(1, 1), UnityEngine.Random.Range(1, 100000));
 	}
 }

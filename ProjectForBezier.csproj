@@ -332,6 +332,7 @@
     <Compile Include="Assets\Scripts\ArrowManager.cs" />
     <Compile Include="Assets\Scripts\Bezier.cs" />
     <Compile Include="Assets\Scripts\JumpingNumberTextComponent.cs" />
+    <Compile Include="Assets\Scripts\JumpNumber.cs" />
     <Compile Include="Assets\Scripts\MouseFollowBezierPath.cs" />
     <Compile Include="Assets\Scripts\MyBezier.cs" />
     <Compile Include="Assets\Scripts\MyTestBezier.cs" />
