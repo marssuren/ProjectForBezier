@@ -88,12 +88,12 @@ public class JumpingNumberTextComponent : MonoBehaviour
 		}
 	}
 
-	private float _different;
-	public float different
+	private float different;
+	public float Different
 	{
 		get
 		{
-			return _different;
+			return different;
 		}
 	}
 	void Start()
@@ -108,7 +108,7 @@ public class JumpingNumberTextComponent : MonoBehaviour
 			return;
 		}
 
-		bool isContinuousChange = (toNumber == _from) && ((_to - _from > 0 && _different > 0) || (_to - _from < 0 && _different < 0));
+		bool isContinuousChange = (toNumber == _from) && ((_to - _from > 0 && different > 0) || (_to - _from < 0 && different < 0));
 		if(isJumping && isContinuousChange)
 		{
 		}
@@ -119,9 +119,9 @@ public class JumpingNumberTextComponent : MonoBehaviour
 		}
 		toNumber = _to;
 
-		_different = toNumber - fromNumber;
-		speed = (int)Math.Ceiling(_different / (_duration * (1 / _rollingDuration)));
-		speed = speed == 0 ? (_different > 0 ? 1 : -1) : speed;
+		different = toNumber - fromNumber;
+		speed = (int)Math.Ceiling(different / (_duration * (1 / _rollingDuration)));
+		speed = speed == 0 ? (different > 0 ? 1 : -1) : speed;
 
 		SetNumber(curNumber, false);
 		isJumping = true;

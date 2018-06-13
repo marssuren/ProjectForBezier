@@ -331,6 +331,7 @@
     <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
     <Compile Include="Assets\Scripts\ArrowManager.cs" />
     <Compile Include="Assets\Scripts\Bezier.cs" />
+    <Compile Include="Assets\Scripts\GameUI.cs" />
     <Compile Include="Assets\Scripts\JumpingNumberTextComponent.cs" />
     <Compile Include="Assets\Scripts\JumpNumber.cs" />
     <Compile Include="Assets\Scripts\MouseFollowBezierPath.cs" />

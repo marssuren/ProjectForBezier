@@ -7,7 +7,7 @@ using UnityEngine;
 public class MyTestBezier : MonoBehaviour
 {
 	[SerializeField]
-	private List<Transform> _pointTrans;
+	private List<RectTransform> _pointTrans;
 
 	private List<Vector2> pointTrans;
 	public List<Vector2> PointTrans
@@ -17,37 +17,33 @@ public class MyTestBezier : MonoBehaviour
 			if(null == pointTrans)
 			{
 				pointTrans = new List<Vector2>();
-				//Debug.LogError(Camera.main.WorldToScreenPoint(new Vector2(_pointTrans[0].transform.position.x, _pointTrans[0].transform.position.y)));
-				pointTrans.Add(Camera.main.WorldToScreenPoint(new Vector2(_pointTrans[0].transform.position.x, _pointTrans[0].transform.position.y)));
-				pointTrans.Add(new Vector2(Screen.width / 2, Screen.height / 2));
-				//Debug.LogError(new Vector2(Screen.width / 2, Screen.height / 2));
-
-				pointTrans.Add(Input.mousePosition);
-				//Debug.LogError(Camera.main.WorldToScreenPoint(new Vector2(_pointTrans[1].transform.position.x, _pointTrans[1].transform.position.y)));
-
+				pointTrans.Add(_pointTrans[0].anchoredPosition);
+				pointTrans.Add(new Vector2(0, 0));
+				Vector2 tOutPoint = Vector2.zero;
+				RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)GameUI.Instance.MainPanelCanvas.transform,
+					Input.mousePosition, GameUI.Instance.UICamera, out tOutPoint);
+				pointTrans.Add(tOutPoint);
 			}
 			return pointTrans;
 		}
 	}
 
 
-	public List<Vector2> track;     //最终轨迹
+	public List<Vector2> track=new List<Vector2>();     //最终轨迹
 	public GameObject Ball;
 	private float sumTime;          //当前累加的时间
 	public float timeLimit = 2f;    //重复的时间长度
 	private int i = 1;
 	[Range(0, 100)]
 	[SerializeField]
-	private int curveCount = 100;
+	private int curveCount = 20;
 	[Range(0, 200f)]
 	[SerializeField]
 	private float lerpSize = 100f;
 	[SerializeField]
 	private LineRenderer lineRenderer;
 
-
-
-
+	
 	public static List<Vector2> GetBezierPath(List<Vector2> _sourcePoints, int _curveCount, float _lerpSize)
 	{
 		List<Vector2> tResultPath = new List<Vector2>();
@@ -95,10 +91,7 @@ public class MyTestBezier : MonoBehaviour
 
 	private void refreshTrack()         //刷新曲线
 	{
-		track = new List<Vector2>();
-		//PointTrans.Add(new Vector2(-10,0));
-		//PointTrans.Add(new Vector2(0,10));
-		//PointTrans.Add(new Vector2(10,0));
+		track.Clear();
 		for(int i = 0; i < curveCount; i++)
 		{
 			List<Vector2> tResultList = GetVectorCopy(PointTrans);
@@ -115,6 +108,21 @@ public class MyTestBezier : MonoBehaviour
 			}
 			track.Add(tResultList[0]);
 		}
+		//track.Insert(0, _pointTrans[0].anchoredPosition);
+		//Vector2 tOutPoint = Vector2.zero;
+		//RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)GameUI.Instance.MainPanelCanvas.transform,
+		//	Input.mousePosition, GameUI.Instance.UICamera, out tOutPoint);
+		//track.Add(tOutPoint);
+	}
+	private void refreshInitialPoints()		//刷新初始点
+	{
+		pointTrans.Clear();
+		pointTrans.Add(_pointTrans[0].anchoredPosition);
+		pointTrans.Add(new Vector2(0, 0));
+		Vector2 tOutPoint = Vector2.zero;
+		RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)GameUI.Instance.MainPanelCanvas.transform,
+			Input.mousePosition, GameUI.Instance.UICamera, out tOutPoint);
+		pointTrans.Add(tOutPoint);
 	}
 	void Awake()
 	{
@@ -127,10 +135,7 @@ public class MyTestBezier : MonoBehaviour
 		for(int i = 0; i < track.Count - 1; i++)
 		{
 			//Gizmos.DrawLine(track[i], track[i + 1]);
-
 		}
-		//Debug.LogError(tVector3s.Length);
-
 	}
 	private void lineRendererDraw()
 	{
@@ -141,11 +146,11 @@ public class MyTestBezier : MonoBehaviour
 			//Vector2 tWorldPoint = transform.InverseTransformPoint(tVector2s[i]);
 			tVector3s[i] = new Vector3(tVector2s[i].x / 5, tVector2s[i].y / 5, 0f);
 		}
-
 		lineRenderer.positionCount = tVector3s.Length;
 		//lineRenderer.startWidth = 0.1f;
 		//lineRenderer.endWidth = 0.1f;
-		lineRenderer.transform.position = new Vector3(-tVector3s[0].x, -tVector3s[0].y, 0);
+		//lineRenderer.transform.position = new Vector3(-tVector3s[0].x, -tVector3s[0].y, 0);
+		
 		lineRenderer.SetPositions(tVector3s);
 	}
 	void Update()
@@ -167,7 +172,6 @@ public class MyTestBezier : MonoBehaviour
 				i = 1;
 			}
 		}
-
 	}
 	public static List<Vector2> GetVectorCopy(List<Vector2> _sourceList) //拷贝vector2 的List
 	{
@@ -191,15 +195,9 @@ public class MyTestBezier : MonoBehaviour
 	{
 		if(_pointTrans[0].hasChanged || Input.mousePresent)
 		{
-			pointTrans.Clear();
-			pointTrans.Add(Camera.main.WorldToScreenPoint(_pointTrans[0].transform.position));
-			pointTrans.Add(new Vector2(Screen.width / 2, Screen.height / 2));
-			pointTrans.Add(new Vector2(Input.mousePosition.x/5,Input.mousePosition.y/5));
-			Debug.LogError(Input.mousePosition);
+			refreshInitialPoints();
 			refreshTrack();
 			lineRendererDraw();
-
 		}
 	}
-
 }
