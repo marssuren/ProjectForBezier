@@ -329,16 +329,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
-    <Compile Include="Assets\Scripts\ArrowManager.cs" />
-    <Compile Include="Assets\Scripts\Bezier.cs" />
+    <Compile Include="Assets\Scripts\Bezier\ArrowManager.cs" />
+    <Compile Include="Assets\Scripts\Bezier\Bezier.cs" />
+    <Compile Include="Assets\Scripts\Bezier\MouseFollowBezierPath.cs" />
+    <Compile Include="Assets\Scripts\Bezier\MyBezier.cs" />
+    <Compile Include="Assets\Scripts\Bezier\MyTestBezier.cs" />
+    <Compile Include="Assets\Scripts\Bezier\TestBezierPoint.cs" />
+    <Compile Include="Assets\Scripts\Bezier\Trace.cs" />
+    <Compile Include="Assets\Scripts\FSM\Base\AdvanceFSM.cs" />
+    <Compile Include="Assets\Scripts\FSM\Base\FSMState.cs" />
+    <Compile Include="Assets\Scripts\FSM\NPC\NPCController.cs" />
+    <Compile Include="Assets\Scripts\FSM\States\AttackState.cs" />
+    <Compile Include="Assets\Scripts\FSM\States\ChaseState.cs" />
+    <Compile Include="Assets\Scripts\FSM\States\DeadState.cs" />
+    <Compile Include="Assets\Scripts\FSM\States\PatrolState.cs" />
     <Compile Include="Assets\Scripts\GameUI.cs" />
-    <Compile Include="Assets\Scripts\JumpingNumberTextComponent.cs" />
-    <Compile Include="Assets\Scripts\JumpNumber.cs" />
-    <Compile Include="Assets\Scripts\MouseFollowBezierPath.cs" />
-    <Compile Include="Assets\Scripts\MyBezier.cs" />
-    <Compile Include="Assets\Scripts\MyTestBezier.cs" />
-    <Compile Include="Assets\Scripts\TestBezierPoint.cs" />
-    <Compile Include="Assets\Scripts\Trace.cs" />
+    <Compile Include="Assets\Scripts\JumpNumber\JumpingNumberTextComponent.cs" />
+    <Compile Include="Assets\Scripts\JumpNumber\JumpNumber.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Demigiant\DOTween\DOTween.XML" />

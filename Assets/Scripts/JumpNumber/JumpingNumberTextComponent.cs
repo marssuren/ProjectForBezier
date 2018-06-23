@@ -66,6 +66,7 @@ public class JumpingNumberTextComponent : MonoBehaviour
 	/// </summary>
 	public Action OnComplete;
 
+	private List<Text> txtNumbersList;
 	private void Awake()
 	{
 		if(_numbers.Count == 0 || _unactiveNumbers.Count == 0)
@@ -74,6 +75,8 @@ public class JumpingNumberTextComponent : MonoBehaviour
 			return;
 		}
 		_numberSize = _numbers[0].rectTransform.sizeDelta;
+		 txtNumbersList = _numbers;
+
 	}
 
 	public float duration
@@ -105,6 +108,7 @@ public class JumpingNumberTextComponent : MonoBehaviour
 		bool tIsRepeatStop = isJumping && fromNumber == _from && toNumber == _to;	
 		if(tIsRepeatStop)
 		{
+			Debug.Log("RepeatStop");
 			return;
 		}
 
@@ -147,6 +151,7 @@ public class JumpingNumberTextComponent : MonoBehaviour
 	{
 		while(true)
 		{
+			Debug.Log("excute");
 			if(speed > 0)//增加
 			{
 				curNumber = Math.Min(curNumber + speed, toNumber);
@@ -159,10 +164,12 @@ public class JumpingNumberTextComponent : MonoBehaviour
 
 			if(curNumber == toNumber)
 			{
-				StopCoroutine("DoJumpNumber");
+				StopCoroutine(DoJumpNumber());
 				isJumping = false;
 				if(OnComplete != null)
 					OnComplete();
+				OnComplete = null;
+				break;
 				yield return null;
 			}
 			yield return new WaitForSeconds(_rollingDuration);
@@ -218,7 +225,7 @@ public class JumpingNumberTextComponent : MonoBehaviour
 					DoTween(_unactiveNumbers[i], 0, _delay * i);
 
 					Text tmp = _numbers[i];
-					_numbers[i] = _unactiveNumbers[i];
+					//_numbers[i] = _unactiveNumbers[i];
 					_unactiveNumbers[i] = tmp;
 				}
 			}
@@ -242,9 +249,12 @@ public class JumpingNumberTextComponent : MonoBehaviour
 		{
 			for(int i = 0; i < _numbers.Count; i++)
 			{
-				_numbers[i].transform.localPosition = new Vector2(_numbers[i].transform.localPosition.x, 0);
+				_numbers[i] = txtNumbersList[i];
+				Debug.Log(_numbers[i].name);
+				//_numbers[i].transform.localPosition = new Vector2(_numbers[i].transform.localPosition.x, 0);
+
 			}
 		};
-		Change(UnityEngine.Random.Range(1, 1), UnityEngine.Random.Range(1, 100000));
+		Change(UnityEngine.Random.Range(150, 151), UnityEngine.Random.Range(220,221));
 	}
 }
