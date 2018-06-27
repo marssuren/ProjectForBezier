@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,8 +30,8 @@ public class NPCController : AdvanceFSM
 		tAttackState.AddTransition(Transition.LostPlayer, FSMStateID.Patrolling);
 		tAttackState.AddTransition(Transition.NoHealth, FSMStateID.Dead);
 
-		DeadState tDeadState=new DeadState();
-		tDeadState.AddTransition(Transition.NoHealth,FSMStateID.Dead);
+		DeadState tDeadState = new DeadState();
+		tDeadState.AddTransition(Transition.NoHealth, FSMStateID.Dead);
 
 		AddFSMState(tPatrolState);
 		AddFSMState(tPatrolState);
@@ -38,8 +39,16 @@ public class NPCController : AdvanceFSM
 		AddFSMState(tPatrolState);
 
 
+		Events.AddEvent(EventSign.GAME_START, DestroySelf, this);
+		Events.Send(EventSign.GAME_START, new EventArg("123"));
 
-
-
+	}
+	private void DestroySelf(EventArg _arg)
+	{
+		LogDebug.Log(_arg.ContentStr);
+	}
+	void Start()
+	{
+		ConstructFSM();
 	}
 }

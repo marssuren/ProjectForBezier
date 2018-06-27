@@ -336,6 +336,18 @@
     <Compile Include="Assets\Scripts\Bezier\MyTestBezier.cs" />
     <Compile Include="Assets\Scripts\Bezier\TestBezierPoint.cs" />
     <Compile Include="Assets\Scripts\Bezier\Trace.cs" />
+    <Compile Include="Assets\Scripts\Flock\UnityFlock.cs" />
+    <Compile Include="Assets\Scripts\Flock\UnityFlockController.cs" />
+    <Compile Include="Assets\Scripts\Framework\Battle\BattleController.cs" />
+    <Compile Include="Assets\Scripts\Framework\Battle\RoundMgr.cs" />
+    <Compile Include="Assets\Scripts\Framework\Debug\Extensions.cs" />
+    <Compile Include="Assets\Scripts\Framework\Event\EventArg.cs" />
+    <Compile Include="Assets\Scripts\Framework\Event\Events.cs" />
+    <Compile Include="Assets\Scripts\Framework\Event\EventSign.cs" />
+    <Compile Include="Assets\Scripts\Framework\Event\EventStruct.cs" />
+    <Compile Include="Assets\Scripts\Framework\Global.cs" />
+    <Compile Include="Assets\Scripts\Framework\UI\PanelBase.cs" />
+    <Compile Include="Assets\Scripts\Framework\UI\PanelMgr.cs" />
     <Compile Include="Assets\Scripts\FSM\Base\AdvanceFSM.cs" />
     <Compile Include="Assets\Scripts\FSM\Base\FSMState.cs" />
     <Compile Include="Assets\Scripts\FSM\NPC\NPCController.cs" />
@@ -346,6 +358,7 @@
     <Compile Include="Assets\Scripts\GameUI.cs" />
     <Compile Include="Assets\Scripts\JumpNumber\JumpingNumberTextComponent.cs" />
     <Compile Include="Assets\Scripts\JumpNumber\JumpNumber.cs" />
+    <Compile Include="Assets\Scripts\SlotMachine\SlotMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Demigiant\DOTween\DOTween.XML" />

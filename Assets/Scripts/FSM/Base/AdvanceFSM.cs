@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class AdvanceFSM : MonoBehaviour
 {
-	private List<FSMState> fsmStates;       //存储FSMState对象
+	private List<FSMState> _fsmStates;       //存储FSMState对象
+	private List<FSMState> fsmStates
+	{
+		get
+		{
+			if(null == _fsmStates)
+			{
+				_fsmStates = new List<FSMState>();
+			}
+
+			return _fsmStates;
+		}
+	}
 	private FSMStateID currentStateId;      //存储FSMStateID
 	public FSMStateID CurrenStateId
 	{
@@ -27,7 +39,7 @@ public class AdvanceFSM : MonoBehaviour
 	{
 		if(!fsmStates.Contains(_fsmState))
 		{
-			fsmStates.Add(_fsmState); 
+			fsmStates.Add(_fsmState);
 		}
 		else
 		{
@@ -36,7 +48,7 @@ public class AdvanceFSM : MonoBehaviour
 	}
 	public void DeleteFSMState(FSMState _fsmState)
 	{
-		if (fsmStates.Contains(_fsmState))
+		if(fsmStates.Contains(_fsmState))
 		{
 			fsmStates.Remove(_fsmState);
 		}
