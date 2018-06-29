@@ -338,6 +338,9 @@
     <Compile Include="Assets\Scripts\Bezier\Trace.cs" />
     <Compile Include="Assets\Scripts\Flock\UnityFlock.cs" />
     <Compile Include="Assets\Scripts\Flock\UnityFlockController.cs" />
+    <Compile Include="Assets\Scripts\FlockSimple\FlockSimple.cs" />
+    <Compile Include="Assets\Scripts\FlockSimple\FlockSimpleController.cs" />
+    <Compile Include="Assets\Scripts\FlockSimple\TargetMovement.cs" />
     <Compile Include="Assets\Scripts\Framework\Battle\BattleController.cs" />
     <Compile Include="Assets\Scripts\Framework\Battle\RoundMgr.cs" />
     <Compile Include="Assets\Scripts\Framework\Debug\Extensions.cs" />
@@ -358,6 +361,9 @@
     <Compile Include="Assets\Scripts\GameUI.cs" />
     <Compile Include="Assets\Scripts\JumpNumber\JumpingNumberTextComponent.cs" />
     <Compile Include="Assets\Scripts\JumpNumber\JumpNumber.cs" />
+    <Compile Include="Assets\Scripts\PathTrack\Path.cs" />
+    <Compile Include="Assets\Scripts\PathTrack\VehicleAvoidance.cs" />
+    <Compile Include="Assets\Scripts\PathTrack\VehicleFollowing.cs" />
     <Compile Include="Assets\Scripts\SlotMachine\SlotMachine.cs" />
   </ItemGroup>
   <ItemGroup>
