@@ -329,6 +329,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
+    <Compile Include="Assets\Scripts\AStar\AStar.cs" />
+    <Compile Include="Assets\Scripts\AStar\GridManager.cs" />
+    <Compile Include="Assets\Scripts\AStar\Node.cs" />
+    <Compile Include="Assets\Scripts\AStar\PriorityQueue.cs" />
+    <Compile Include="Assets\Scripts\AStar\TestCode.cs" />
     <Compile Include="Assets\Scripts\Bezier\ArrowManager.cs" />
     <Compile Include="Assets\Scripts\Bezier\Bezier.cs" />
     <Compile Include="Assets\Scripts\Bezier\MouseFollowBezierPath.cs" />
