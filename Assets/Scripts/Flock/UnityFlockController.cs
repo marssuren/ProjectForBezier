@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//领导的作用是更新自己的位置，这样其他的个体就知道往哪走  在个体的origin中被引用
 public class UnityFlockController : MonoBehaviour
 {
 	public Vector3 Offset;
@@ -15,7 +17,7 @@ public class UnityFlockController : MonoBehaviour
 		initialPosition = transform.position;
 		calculateNextMovementPoint();
 	}
-	void Update()
+	void Update()   //自己动(此处转圈)
 	{
 		transform.Translate(Vector3.forward * Speed * Time.deltaTime);
 		transform.rotation = Quaternion.Slerp(transform.rotation,
